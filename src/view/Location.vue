@@ -1,11 +1,34 @@
 <template>
 	<Navigation />
-	<div class="container">
-		<div class="container-img">
-			<img :src="nItem?.cover" :alt="nItem?.title" />
+	<div class="container-location">
+		<div class="container-picture">
+			<img class="picture" :src="nItem?.pictures[2]" :alt="nItem?.title" />
 			<h2>{{ nItem?.title }}</h2>
+			<h4>{{ nItem?.location }}</h4>
 		</div>
-		
+		<div class="container-tag">
+			<div class="tag" v-for="(tag, index) in nItem?.tags" :key="index">
+				<p>{{ tag }}</p>
+			</div>
+		</div>
+
+		<div class="container-star-host">
+			<div class="container-star">
+				<div class="star" v-for="i in rating">
+					<img v-if="nItem.rating >= i" src="../components/images/star.svg" />
+					<img v-else src="../components/images/star-empty.svg" />
+				</div>
+			</div>
+			<div class="host">
+				<div class="wrapper-host">
+					<p>{{ nItem?.host.name }}</p>
+				</div>
+
+				<img :src="nItem?.host.picture" />
+			</div>
+		</div>
+
+		<Accordeon :name="nItem" />
 	</div>
 </template>
 
@@ -13,28 +36,77 @@
 import item from '../assets/ressources.json';
 import { useRoute } from 'vue-router';
 import Navigation from '../components/Navigation.vue';
+import Accordeon from '@/components/Accordeon.vue';
 import { ref } from '@vue/reactivity';
+
 const route = useRoute();
-const nItem = ref(item.find((item) => item.id === route.params.id));
+const nItem: Object | any = ref(item.find((item) => item.id === route.params.id));
+const picture = ref(nItem.value?.pictures);
+const rating = 5;
 console.log(nItem);
 </script>
 
 <style scoped lang="scss">
-.container {
-	display: grid;
-	
+@import '../assets/scss/base.scss';
+
+.container-location {
+	display: flex;
+	flex-direction: column;
+	color: $primary;
+}
+.container-picture {
 	width: 100%;
-	min-height: 100vh;
-	.container-img {
-		margin-top: 50px;
-		width: 335px;
-		height: 255px;
-		img {
-			object-fit: cover center;
-			height: 100%;
-			width: 100%;
-			border-radius: 15px;
+	height: auto;
+	img {
+		margin-top: 20px;
+		width: 100%;
+		height: 280px;
+	}
+}
+.container-tag {
+	display: flex;
+	width: 100%;
+	.tag {
+		margin: 10px 10px 10px 0px;
+		background-color: $primary;
+		font-size: 14px;
+		color: #f1f1f1;
+		padding: 5px;
+		border-radius: 5px;
+	}
+}
+.container-star-host {
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	.container-star {
+		display: flex;
+		margin-right: 70px;
+		width: 50%;
+		.star {
+			margin-right: 10px;
 		}
+	}
+}
+.host {
+	width: 50%;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.wrapper-host {
+		display: flex;
+		
+	
+	}
+	img {
+		align-self: flex-end;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		object-fit: cover center;
+		overflow: hidden;
 	}
 }
 </style>
