@@ -22,8 +22,6 @@ import item from '../assets/ressources.json';
 
 import { RouterLink } from 'vue-router';
 import { ref } from '@vue/reactivity';
-
-
 </script>
 
 <style scoped lang="scss">
@@ -56,7 +54,7 @@ import { ref } from '@vue/reactivity';
 		height: 100%;
 		border-radius: 15px;
 		border: solid 0.1px rgb(242, 239, 234);
-		filter: brightness(50%);
+		filter: brightness(60%);
 	}
 }
 .container-allCards {

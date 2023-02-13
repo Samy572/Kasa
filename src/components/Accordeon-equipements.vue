@@ -1,7 +1,7 @@
 <template>
 	<div class="container-description">
 		<div class="accordeon">
-			<h4>{{ title }}</h4>
+			<h4>{{ props.title }}</h4>
 			<div @click="toggle()" class="img-container">
 				<img
 					:class="{
@@ -13,7 +13,9 @@
 			</div>
 		</div>
 		<div class="container-paragraph">
-			<p v-if="active">{{ props.name }}</p>
+			<div class="equipement" v-for="(item, index) in props.name">
+				<p v-if="active">{{ item }}</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -21,8 +23,8 @@
 <script setup lang="ts">
 import { ref } from '@vue/reactivity';
 const props = defineProps({
+	name: Array,
 	title: String,
-	name: String,
 });
 const active = ref(false);
 const arrowDown = ref(true);

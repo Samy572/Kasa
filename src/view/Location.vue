@@ -28,7 +28,8 @@
 			</div>
 		</div>
 
-		<Accordeon :name="nItem" />
+		<Accordeon :name="nItem.description" title="Description" />
+		<AccordeonEquipement :name="nItem.equipments" title ="Equipements" />
 	</div>
 </template>
 
@@ -37,13 +38,14 @@ import item from '../assets/ressources.json';
 import { useRoute } from 'vue-router';
 import Navigation from '../components/Navigation.vue';
 import Accordeon from '@/components/Accordeon.vue';
+import AccordeonEquipement from '@/components/Accordeon-equipements.vue';
+
 import { ref } from '@vue/reactivity';
 
 const route = useRoute();
 const nItem: Object | any = ref(item.find((item) => item.id === route.params.id));
 const picture = ref(nItem.value?.pictures);
 const rating = 5;
-console.log(nItem);
 </script>
 
 <style scoped lang="scss">
@@ -65,8 +67,10 @@ console.log(nItem);
 }
 .container-tag {
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 	.tag {
+		align-self: center;
 		margin: 10px 10px 10px 0px;
 		background-color: $primary;
 		font-size: 14px;
@@ -82,7 +86,6 @@ console.log(nItem);
 	width: 100%;
 	.container-star {
 		display: flex;
-		margin-right: 70px;
 		width: 50%;
 		.star {
 			margin-right: 10px;
@@ -93,12 +96,11 @@ console.log(nItem);
 	width: 50%;
 	font-size: 16px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	.wrapper-host {
-		display: flex;
-		
-	
+		display: block;
+		margin-right: 20px;
 	}
 	img {
 		align-self: flex-end;
@@ -106,7 +108,6 @@ console.log(nItem);
 		width: 50px;
 		border-radius: 50%;
 		object-fit: cover center;
-		overflow: hidden;
 	}
 }
 </style>
