@@ -15,8 +15,8 @@
 		<div class="container-star-host">
 			<div class="container-star">
 				<div class="star" v-for="i in rating">
-					<img v-if="nItem.rating >= i" src="../components/images/star.svg" />
-					<img v-else src="../components/images/star-empty.svg" />
+					<img v-if="nItem.rating >= i" src="../assets/images/star.svg" />
+					<img v-else src="../assets/images/star-empty.svg" />
 				</div>
 			</div>
 			<div class="host">
@@ -29,7 +29,7 @@
 		</div>
 
 		<Accordeon :name="nItem.description" title="Description" />
-		<AccordeonEquipement :name="nItem.equipments" title ="Equipements" />
+		<AccordeonEquipement :name="nItem.equipments" title="Equipements" />
 	</div>
 </template>
 
@@ -52,6 +52,7 @@ const rating = 5;
 @import '../assets/scss/base.scss';
 
 .container-location {
+	padding: 0 10px;
 	display: flex;
 	flex-direction: column;
 	color: $primary;
@@ -60,6 +61,7 @@ const rating = 5;
 	width: 100%;
 	height: auto;
 	img {
+		border-radius: 10px;
 		margin-top: 20px;
 		width: 100%;
 		height: 280px;

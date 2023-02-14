@@ -1,7 +1,7 @@
 <template>
+	<Navigation />
 	<div id="Home">
-		<Navigation />
-		<Card/>
+		<Card />
 	</div>
 </template>
 
@@ -12,4 +12,7 @@ import Navigation from '../components/Navigation.vue';
 
 <style scoped lang="scss">
 @import '../src/assets/scss/base.scss';
+#Home {
+	padding: 0 10px;
+}
 </style>

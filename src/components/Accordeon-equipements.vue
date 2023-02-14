@@ -7,7 +7,7 @@
 					:class="{
 						arrowUp: arrowDown,
 					}"
-					src="./images/Arrows.svg"
+					src="../assets/images/Arrows.svg"
 					alt="dérouler"
 				/>
 			</div>

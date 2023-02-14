@@ -1,3 +1,4 @@
+import PageNotFoundVue from '@/view/PageNotFound.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -17,6 +18,11 @@ const router = createRouter({
 			path: '/location/:id',
 			name: 'location',
 			component: () => import('../view/Location.vue'),
+		},
+		{
+			path: '/:pathMatch(.*)*',
+			name: '404',
+			component: () => import('../view/PageNotFound.vue'),
 		},
 	],
 });

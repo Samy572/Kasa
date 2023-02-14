@@ -2,7 +2,7 @@
 	<div id="nav">
 		<nav>
 			<div class="logo">
-				<img src="./images/LOGO.svg" alt="Kasa" />
+				<img src="../assets/images/LOGO.svg" alt="Kasa" />
 			</div>
 			<ul>
 				<li><RouterLink to="/">Accueil</RouterLink></li>
@@ -11,7 +11,6 @@
 			</ul>
 		</nav>
 	</div>
-	
 </template>
 
 <script setup lang="ts">
@@ -24,7 +23,7 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20px 0;
+	padding: 20px 10px;
 	height: 63px;
 	width: 100%;
 	.logo {
@@ -50,5 +49,4 @@ nav {
 		cursor: pointer;
 	}
 }
-
 </style>

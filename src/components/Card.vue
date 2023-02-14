@@ -4,7 +4,7 @@
 			<div class="h2">
 				<h2>Chez vous,<br />partout et ailleurs</h2>
 			</div>
-			<div class="container-img"><img src="./images/Chez-vous.jpg" /></div>
+			<div class="container-img"><img src="../assets/images/Chez-vous.jpg" /></div>
 		</div>
 	</div>
 	<div class="container-allCards">
