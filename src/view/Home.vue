@@ -15,4 +15,10 @@ import Navigation from '../components/Navigation.vue';
 #Home {
 	padding: 0 10px;
 }
+
+@media screen and (min-width: 850px) {
+	#Home {
+		padding: 0 50px;
+	}
+}
 </style>
