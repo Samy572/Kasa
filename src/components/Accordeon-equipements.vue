@@ -1,5 +1,5 @@
 <template>
-	<div class="container-description">
+	<div class="container-equipments">
 		<div class="accordeon">
 			<h4>{{ props.title }}</h4>
 			<div @click="toggle()" class="img-container">
@@ -12,7 +12,7 @@
 				/>
 			</div>
 		</div>
-		<div class="container-paragraph">
+		<div v-if="active" class="container-paragraph">
 			<div class="equipement" v-for="(item, index) in props.name">
 				<p v-if="active">{{ item }}</p>
 			</div>
@@ -36,13 +36,13 @@ function toggle() {
 </script>
 <style scoped lang="scss">
 @import '../assets/scss/base.scss';
-.container-description {
+.container-equipments {
 	width: 100%;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 20px;
 }
+
 .accordeon {
 	display: flex;
 	align-items: center;
@@ -50,23 +50,48 @@ function toggle() {
 	padding: 10px 10px;
 	height: 25px;
 	background-color: $primary;
+	padding: 15px;
+	border-radius: 10px;
 	color: #f1f1f1;
 	width: 100%;
+	margin-top: 30px;
 
 	span {
 		color: #f1f1f1;
 	}
 }
+.equipement {
+	width: 100%;
+	padding: 5px;
+}
 
 .container-paragraph {
-	background-color: #f7f7f7;
+	width: 100%;
+	min-height: 110px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	border-radius: 5px;
-	p {
-		padding: 10px;
-	}
+	background-color: #f7f7f7;
+	border-radius: 10px;
+	margin-bottom: 10px;
 }
 .arrowUp {
 	transform: rotate(180deg);
+	cursor: pointer;
+}
+
+@media screen and (min-width: 850px) {
+	.container-description {
+		margin: 0 auto;
+		width: 750px auto;
+	}
+	.accordeon {
+		height: 47px;
+		h4 {
+			font-size: 20px;
+			font-weight: 500;
+		}
+	}
 }
 </style>
 S

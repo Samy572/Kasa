@@ -1,7 +1,8 @@
 <template>
-	<Navigation />
-	<section class="About">
-		<div class="container-imgAbout">
+	<section id="About">
+		<Navigation />
+
+		<div class="imgAbout">
 			<img src="../assets/images/About-mobile.jpg" alt="landscape" />
 		</div>
 		<div class="container-rules">
@@ -21,22 +22,26 @@ import about from '../assets/about.json';
 import Foot from '@/components/Foot.vue';
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../assets/scss/base.scss';
-.About {
+#About {
 	width: 100%;
-	height: auto;
+	min-height: 100vh;
 	padding: 0 10px;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 }
-.container-imgAbout {
+.imgAbout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: 300px;
 	margin-top: 50px;
-
+	width: 100%;
 	img {
-		width: 100%;
+		object-fit: cover;
+		width: 1233px;
 		height: 223px;
 		border-radius: 10px;
 		filter: brightness(90%);
@@ -45,5 +50,18 @@ import Foot from '@/components/Foot.vue';
 
 .container-rules {
 	color: $primary;
+	margin: 0;
+	padding: 0;
+
+}
+@media screen and (min-width: 850px) {
+	#About {
+		padding: 0 75px;
+		p {
+			padding: 36px 30px 20px 20px;
+			line-height: 34px;
+			font-size: 24px;
+		}
+	}
 }
 </style>

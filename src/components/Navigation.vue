@@ -42,11 +42,19 @@ nav {
 	}
 	a {
 		text-decoration: none;
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 500;
 		color: $primary;
 		text-transform: uppercase;
 		cursor: pointer;
+	}
+	.router-link-active {
+		text-decoration: underline;
+	}
+}
+@media screen and (min-width: 850px) {
+	.router-link{
+		font-size: 24px;
 	}
 }
 </style>

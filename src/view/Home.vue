@@ -1,6 +1,6 @@
 <template>
-	<Navigation />
 	<div id="Home">
+		<Navigation />
 		<Card />
 	</div>
 </template>
@@ -13,12 +13,13 @@ import Navigation from '../components/Navigation.vue';
 <style scoped lang="scss">
 @import '../src/assets/scss/base.scss';
 #Home {
+	min-height: 100vh;
 	padding: 0 10px;
 }
 
 @media screen and (min-width: 850px) {
 	#Home {
-		padding: 0 50px;
+		padding: 0 75px;
 	}
 }
 </style>

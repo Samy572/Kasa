@@ -45,9 +45,11 @@ function toggle() {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px 10px;
+	padding: 15px;
+	margin-top: 30px;
 	height: 25px;
 	background-color: $primary;
+	border-radius: 10px;
 	color: #f1f1f1;
 	width: 100%;
 
@@ -57,14 +59,36 @@ function toggle() {
 }
 
 .container-paragraph {
-	background-color: #f7f7f7;
 	border-radius: 5px;
+	border-radius: 10px;
+	width: 100%;
+	display: flex;
+	margin-bottom: 10px;
+
 	p {
+		background-color: #f7f7f7;
+		line-height: 30px;
+		min-height: 110px;
 		padding: 10px;
+		border-radius: 10px;
 	}
 }
 .arrowUp {
 	transform: rotate(180deg);
+	cursor: pointer;
+}
+
+@media screen and (min-width: 850px) {
+	.container-description {
+		margin: 0 auto;
+		width: 750px auto;
+	}
+	.accordeon {
+		height: 47px;
+		h4 {
+			font-size: 20px;
+			font-weight: 500;
+		}
+	}
 }
 </style>
-S

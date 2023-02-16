@@ -56,6 +56,9 @@ import { ref } from '@vue/reactivity';
 	display: flex;
 	flex-direction: column;
 }
+h2 {
+	font-size: 2em;
+}
 
 .card {
 	position: relative;
@@ -79,24 +82,39 @@ import { ref } from '@vue/reactivity';
 }
 
 @media screen and (min-width: 850px) {
-
+	.container-img {
+		margin-top: 120px;
+		img {
+			height: 270px;
+		}
+	}
 	.container-allCards {
 		margin-top: 120px;
 		background-color: #f7f7f7;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(3, 1fr);
+		padding: 10px;
+		grid-gap: 40px;
+		img {
+			height: 320px;
+		}
 	}
 	.card {
-		width: 80%;
+		margin: 0;
+		width: 100%;
 		height: 80%;
-		padding: 40px 30px;
+		margin: 0;
+
 		h3 {
-			top: 50%;
-			max-width: 70%;
+			top: 65%;
+			max-width: 80%;
 			line-height: 30px;
 			font-size: 18px;
+			font-weight: 500;
 		}
 	}
 }
+
+
 </style>
