@@ -2,8 +2,9 @@
 	<div class="container-description">
 		<div class="accordeon">
 			<h4>{{ title }}</h4>
-			<div @click="toggle()" class="img-container">
+			<div @click="toggle()">
 				<img
+					class="img-container"
 					:class="{
 						arrowUp: arrowDown,
 					}"
@@ -73,9 +74,13 @@ function toggle() {
 		border-radius: 10px;
 	}
 }
-.arrowUp {
-	transform: rotate(180deg);
+.img-container {
 	cursor: pointer;
+	transform: rotate(180deg);
+}
+.arrowUp {
+	cursor: pointer;
+	transform: rotate(0deg);
 }
 
 @media screen and (min-width: 850px) {

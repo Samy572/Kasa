@@ -2,8 +2,9 @@
 	<div class="container-equipments">
 		<div class="accordeon">
 			<h4>{{ props.title }}</h4>
-			<div @click="toggle()" class="img-container">
+			<div @click="toggle()">
 				<img
+					class="img-container"
 					:class="{
 						arrowUp: arrowDown,
 					}"
@@ -26,8 +27,10 @@ const props = defineProps({
 	name: Array,
 	title: String,
 });
+
 const active = ref(false);
 const arrowDown = ref(true);
+
 
 function toggle() {
 	active.value = !active.value;
@@ -75,9 +78,13 @@ function toggle() {
 	border-radius: 10px;
 	margin-bottom: 10px;
 }
-.arrowUp {
-	transform: rotate(180deg);
+.img-container {
 	cursor: pointer;
+	transform: rotate(180deg);
+}
+.arrowUp {
+	cursor: pointer;
+	transform: rotate(0deg);
 }
 
 @media screen and (min-width: 850px) {

@@ -55,9 +55,12 @@ const rating = 5;
 <style scoped lang="scss">
 @import '../assets/scss/base.scss';
 
+#Location {
+	padding: 0 10px;
+}
 .container-location {
 	min-height: 100vh;
-	padding: 0 10px;
+
 	display: flex;
 	flex-direction: column;
 	color: $primary;
@@ -116,6 +119,9 @@ const rating = 5;
 	#Location {
 		padding: 0 75px;
 	}
+	.container-location{
+		margin-top: 40px;
+	}
 	.container-picture {
 		margin-top: 50px;
 		.picture {
@@ -127,6 +133,9 @@ const rating = 5;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr;
 		grid-gap: 100px;
+	}
+	.container-star img {
+		height: 24px;
 	}
 }
 </style>
