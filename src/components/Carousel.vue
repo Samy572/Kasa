@@ -1,5 +1,5 @@
 <template>
-	<div class="caroussel">
+	<div class="carousel">
 		<div class="container-picture">
 			<img
 				v-for="(picture, index) in pictures"
@@ -35,7 +35,7 @@ function sliderNext() {
 </script>
 
 <style scoped lang="scss">
-.caroussel {
+.carousel {
 	width: 100%;
 	height: 320px;
 	display: grid;

@@ -1,7 +1,7 @@
 <template>
 	<div id="Location">
 		<Navigation />
-		<Caroussel :name="nItem" />
+		<Carousel :name="nItem" />
 		<div class="container-location">
 			<div class="container-title">
 				<h2>{{ nItem?.title }}</h2>
@@ -40,7 +40,7 @@
 import item from '../assets/ressources.json';
 import { useRoute } from 'vue-router';
 import Navigation from '../components/Navigation.vue';
-import Caroussel from '../components/Caroussel.vue';
+import Carousel from '../components/Carousel.vue';
 import Accordeon from '@/components/Accordeon.vue';
 import AccordeonEquipement from '@/components/Accordeon-equipements.vue';
 
@@ -119,7 +119,7 @@ const rating = 5;
 	#Location {
 		padding: 0 75px;
 	}
-	.container-location{
+	.container-location {
 		margin-top: 40px;
 	}
 	.container-picture {
